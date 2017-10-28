@@ -1,6 +1,10 @@
 #ifndef _matrix_h_
 #define _matrix_h_
 
+#include <Windows.h>
+#include "point.h"
+#include "tvector.h"
+#include "vertex.h"
 //////////////////////////////////////////////////////////////////////////////
 //
 // Transform Types
@@ -55,7 +59,7 @@ float Determinant(
 // Matrix2
 //
 //////////////////////////////////////////////////////////////////////////////
-
+class Matrix;
 class Matrix2 {
 private:
     float m_m[3][3];
@@ -145,7 +149,8 @@ public:
 // Matrix
 //
 //////////////////////////////////////////////////////////////////////////////
-
+class Orientation;
+class Vector;
 class Matrix {
 private:
     float m_m[4][4];

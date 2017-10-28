@@ -1,10 +1,14 @@
-#include "pch.h"
+#include "Win32app.h"
 #include "regkey.h"
 #include "SlmVer.h"
 
 //Imago 7/10
 #include <dbghelp.h>
-
+#include "zstring.h"
+#include "VersionInfo.h"
+#include <ctime>
+#include "zmath.h"
+#include "window.h"
 //////////////////////////////////////////////////////////////////////////////
 //
 // Some assertion functions
@@ -72,12 +76,12 @@ int Win32App::GenerateDump(EXCEPTION_POINTERS* pExceptionPointers)
 
     bMiniDumpSuccessful = MiniDumpWriteDump(GetCurrentProcess(), GetCurrentProcessId(), 
                     hDumpFile, mdt, &ExpParam, NULL, NULL);
-
+#ifndef NO_STEAM
 	SteamAPI_SetMiniDumpComment(p);
 
 	// The 0 here is a build ID, we don't set it
 	SteamAPI_WriteMiniDump(0, pExceptionPointers, int(rup)); // Now including build and release number in steam errors.
-
+#endif // !NO_STEAM
     return EXCEPTION_EXECUTE_HANDLER;
 }
 
@@ -128,13 +132,13 @@ int GenerateDump(EXCEPTION_POINTERS* pExceptionPointers)
 
     bMiniDumpSuccessful = MiniDumpWriteDump(GetCurrentProcess(), GetCurrentProcessId(), 
                     hDumpFile, mdt, &ExpParam, NULL, NULL);
-
+#ifndef NO_STEAM
 	// BT - STEAM
 	SteamAPI_SetMiniDumpComment(p);
 
 	// The 0 here is a build ID, we don't set it
 	SteamAPI_WriteMiniDump(0, pExceptionPointers, int(rup)); // Now including build and release number in steam errors.
-
+#endif
     return EXCEPTION_EXECUTE_HANDLER;
 }
 

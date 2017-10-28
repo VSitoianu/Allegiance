@@ -19,6 +19,7 @@
 #pragma once
 #include <vector>
 #include <map>
+#include <Windows.h>
 
 struct FunctionCall 
 {

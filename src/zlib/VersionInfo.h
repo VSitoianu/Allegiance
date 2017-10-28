@@ -5,13 +5,11 @@
 // VersionInfo.h : Declaration of the ZVersionInfo class.
 //
 
-#ifndef VER_H
-  #include <winver.h>
-#endif // !VER_H
-
-#ifndef _INC_TCHAR
-  #include <tchar.h>
-#endif // !_INC_TCHAR
+#include <Windows.h>
+#include <winver.h>
+#include <tchar.h>
+#include "zstring.h"
+#include "zassert.h"
 
 #ifndef sizeofArray
   ///////////////////////////////////////////////////////////////////////////

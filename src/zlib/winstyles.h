@@ -1,4 +1,6 @@
+#pragma once
 
+#include "mask.h"
 // broke these out into another file so this doesn't kill Source Insight
 class StyleBaseType {};
 typedef TBitMask<StyleBaseType, DWORD> Style;

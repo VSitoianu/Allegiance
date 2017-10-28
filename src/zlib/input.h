@@ -1,6 +1,9 @@
 #ifndef _input_h_
 #define _input_h_
 
+#include "mask.h"
+#include "tref.h"
+#include "point.h"
 //////////////////////////////////////////////////////////////////////////////
 //
 // Forward declarations
@@ -91,6 +94,8 @@ public:
 // Input Provider
 //
 /////////////////////////////////////////////////////////////////////////////
+
+class ITimerEventSource;
 
 class IInputProvider : public IObject {
 public:

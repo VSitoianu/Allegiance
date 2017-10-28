@@ -1,9 +1,12 @@
 #ifndef _Window_h_
 #define _Window_h_
 
-#include "commctrl.h"
 #include "winstyles.h"
-
+#include "rect.h"
+#include "input.h"
+#include "event.h"
+#include "tmap.h"
+#include "commctrl.h"
 
 // x64: GWL is GWLP in x64 SDK Imago 6/20/09
 #if defined (_WIN64) 
